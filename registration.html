@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация — Санкт-Петербург 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="registr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+</head>
+<body class="login-page">
+    <div class="auth-wrapper">
+        <img src="31c42c96-481c-4288-b740-4a38a8629612.jpeg" class="hero-image" alt="Питер">
+        
+        <div class="auth-card">
+            <h1 class="gold-title">Регистрация</h1>
+            <p class="subtitle">Присоединяйтесь к путешествию по северной столице</p>
+
+            <div class="registration-form">
+                <div class="input-grid">
+                    <div class="input-box">
+                        <label>Ваше имя</label>
+                        <input type="text" id="regName" placeholder="Иван Иванов">
+                    </div>
+                    <div class="input-box">
+                        <label>Телефон</label>
+                        <input type="tel" id="regPhone" placeholder="+7 (999) 000-00-00">
+                    </div>
+                    <div class="input-box">
+                        <label>Возраст</label>
+                        <input type="number" id="regAge" placeholder="18">
+                    </div>
+                    <div class="input-box">
+                        <label>Пароль</label>
+                        <input type="password" id="regPass" placeholder="••••••••">
+                    </div>
+                </div>
+
+                <button onclick="handleRegister()" class="btn-gold-action">Создать аккаунт</button>
+            <div class="auth-nav">
+                <span>Уже есть профиль?</span>
+                <a href="#" id="toggleAuth" class="login-link">Войти в систему</a>
+            </div>
+            
+            <a href="index.html" class="home-back">← На главную</a>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

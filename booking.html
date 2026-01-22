@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование — Санкт-Петербург</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body class="booking-body">
+
+    <div class="booking-card">
+        <h1 id="displayTourName" class="tour-title">Загрузка экскурсии...</h1>
+        
+        <div class="user-info">
+            <p id="welcomeUser" class="welcome-msg">Загрузка данных пользователя...</p>
+        </div>
+        
+        <form id="orderForm">
+            <div class="field">
+                <label for="date">Выберите дату:</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="field">
+                <label for="time">Выберите удобное время:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="field">
+                <label for="guests">Количество гостей:</label>
+                <input type="number" id="guests" min="1" max="15" value="1" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Подтвердить бронирование</button>
+            
+            <div class="footer-links">
+                <a href="index.html" class="link-back">← Вернуться на главную</a>
+            </div>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

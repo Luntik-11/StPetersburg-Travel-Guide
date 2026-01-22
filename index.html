@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Санкт-Петербург</title>
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="light.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="35.png" alt="Шишка" id="themeButton">
+            <h3>Санкт-Петербург</h3>
+        </div>
+        
+        <button id="menuToggle" class="menu-toggle"><span>☰</span></button>
+        
+        <nav id="navMenu">
+            <ul>
+                <li class="nav-link"><a href="index.html">Главная</a></li>
+                <li class="nav-link"><a href="index.html#facts">Факты</a></li>
+                <li class="nav-link"><a href="index.html#tours">Экскурсии</a></li>
+                <li class="come_in">
+                    <a href="registration.html">
+                        <button class="theme-button"><i class="fa-solid fa-user"></i>Войти</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main>
+        <div class="intro">
+            <img src="saint_petersburg_spa_6c25de90.jpg" alt="Санкт-Петербург" class="hero-image">
+            <h1>Санкт-Петербург:</h1>
+            <h2>Город, который</h2> 
+            <h2><span class="italic-word">вдохновляет</span></h2>
+
+            <p class="a">Откройте для себя величие имперской архитектуры, магию белых ночей и современный ритм культурной столицы.</p>
+            <div class="intro-buttons">
+                <button class="btn-primary" onclick="document.getElementById('tours').scrollIntoView({behavior: 'smooth'})">Забронировать тур</button>
+                <button class="btn-secondary" onclick="document.getElementById('facts').scrollIntoView({behavior: 'smooth'})">Узнать больше</button>
+            </div>
+        </div>
+        <div id="bookingStatus"></div>
+
+        <section id="facts" class="attractions">
+            <h1>Интересные факты</h1>
+            <p>Цифры, которые создают историю великого города</p>
+            <ul class="icon-list">
+                <li>
+                    <i class="fa-solid fa-crown"></i> 
+                    <strong>Основан в 1703</strong>
+                    <p>Петром Великим как 'окно в Европу'</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-water"></i>
+                    <strong>42 Острова</strong>
+                    <p>Город расположен в дельте Невы</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-road"></i> 
+                    <strong>342 Моста</strong>
+                    <p>Включая 13 разводных мостов</p>
+                </li>
+                <li>
+                    <i class="fa-solid fa-moon"></i>
+                    <strong>Белые Ночи</strong>
+                    <p>Уникальное природное явление летом</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="gallery">
+            <h1>Популярные места</h1>
+            <p>Достопримечательности, которые обязан увидеть каждый гость Северной столицы.</p>
+            <div class="image-grid">
+                <div class="ih-item square effect-hover zoom-effect"><a href="#">
+                    <div class="img"><img src="church_of_the_savior_791bf597-BjdeIdfK.jpg" alt="Спас на Крови"></div>
+                    <div class="info">
+                      <h3>Спас на Крови</h3>
+                      <p>Уникальный памятник русской архитектуры с мозаичными интерьерами.</p>
+                    </div>
+                </a></div>
+                <div class="ih-item square effect-hover zoom-effect"><a href="#">
+                    <div class="img"><img src="Фонтаны Нижнего парка.jpg" alt="Петергоф"></div>
+                    <div class="info">
+                        <h3>Петергоф</h3>
+                        <p>Столица фонтанов и роскошная загородная резиденция императоров.</p>
+                    </div>
+                </a></div>
+                <div class="ih-item square effect-hover zoom-effect"><a href="#">
+                    <div class="img"><img src="isaakievskiy-sobor.jpg" alt="Исаакиевский собор"></div>
+                    <div class="info">
+                        <h3>Исаакиевский Собор</h3>
+                        <p>Крупнейший православный храм Санкт-Петербурга и музей-памятник.</p>
+                    </div>
+                </a></div>
+            </div>
+        </section>
+
+        <section id="tours" class="visit">
+            <h1>Авторские экскурсии</h1>
+            <p>Посмотрите на город глазами местных жителей</p>
+            <article> 
+                <div class="tour-card">
+                    <span class="category-tag">Экстрим</span>
+                    <div class="img"><img src="evening_night_saint__214463b5.jpg" alt="Прогулка по крышам"></div>
+                    <h2>Прогулка по крышам</h2>
+                    <div class="tour-info">
+                        <p class="money">1 500 ₽</p>
+                        <div class="details">
+                            <p><i class="fa-solid fa-clock"></i> 1.5 часа</p>
+                            <p><i class="fa-solid fa-users"></i> до 6 чел.</p>
+                        </div>
+                    </div>
+                    <a href="booking.html?tour=Прогулка по крышам"><button class="btn-book">Забронировать</button></a>
+                </div>
+                <div class="tour-card">
+                    <span class="category-tag">Водная</span>
+                    <div class="img"><img src="1717691707373.png" alt="Классический Петербург"></div>
+                    <h2>Классический Петербург</h2>
+                    <div class="tour-info">
+                        <p class="money">2 000 ₽</p>
+                        <div class="details">
+                            <p><i class="fa-solid fa-clock"></i> 3 часа</p>
+                            <p><i class="fa-solid fa-users"></i> до 15 чел.</p>
+                        </div>
+                    </div>
+                    <a href="booking.html?tour=Классический Петербург"><button class="btn-book">Забронировать</button></a>
+                </div>
+                <div class="tour-card">
+                    <span class="category-tag">Архитектура</span>
+                    <div class="img"><img src="saint_petersburg_rus_83d700cb.jpg" alt="Тайны парадных"></div>
+                    <h2>Тайны парадных</h2>
+                    <div class="tour-info">
+                        <p class="money">1 200 ₽</p>
+                        <div class="details">
+                            <p><i class="fa-solid fa-clock"></i> 2 часа</p>
+                            <p><i class="fa-solid fa-users"></i> до 10 чел.</p>
+                        </div>
+                    </div>
+                    <a href="booking.html?tour=Тайны парадных"><button class="btn-book">Забронировать</button></a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Dinchenko. Все права защищены.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
