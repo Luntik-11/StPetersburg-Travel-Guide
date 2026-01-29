@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var allOrders = JSON.parse(localStorage.getItem('myBookings') || '[]');
     console.log("Сохраненные данные в базе:", allOrders);
     console.groupEnd();
-
+    var localOrders = JSON.parse(localStorage.getItem('myBookings') || '[]');
     // === 2. FETCH API СИНХРОНИЗАЦИЯ ===
     async function sync(orderData) {
         const API_URL = "http://web4.informatics.ru:82/api/4fd5b4efa75dbb25fff57f5d71bd78e9";
@@ -58,7 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error("❌ Ошибка получения данных:", error);
         }
     }
-    sync(); 
+    if (savedUser) {
+        sync();
+    } else {
+        console.log("👋 Режим гостя: синхронизация пропущена");
+    }
 
     // === 3. ВХОД / РЕГИСТРАЦИЯ ===
     var toggleLink = document.querySelector('.login-link');
