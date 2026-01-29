@@ -12,20 +12,53 @@ document.addEventListener('DOMContentLoaded', function() {
     console.groupEnd();
 
     // === 2. FETCH API СИНХРОНИЗАЦИЯ ===
-    async function sync(data, action) {
-        console.log(" [FETCH] " + action + ":", data);
+    async function sync(orderData) {
+        const API_URL = "http://web4.informatics.ru:82/api/4fd5b4efa75dbb25fff57f5d71bd78e9";
+        if (orderData) {
+            let dataToSend = {
+                item_name: `Тур: ${orderData.tour} | Юзер: ${orderData.user} | Дата: ${orderData.date}`,
+                item_amount: Number(orderData.id.toString().slice(-6)) 
+            };
+            
+            console.log("📡 Отправка данных на сервер...");
+            try {
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(dataToSend)
+                });
+                if (response.ok) console.log("✅ Заказ зафиксирован в облаке");
+            } catch (e) { console.error("❌ Ошибка отправки:", e); }
+        }
+        console.log("🔄 Синхронизация списка заказов...");
         try {
-            await fetch('https://jsonplaceholder.typicode.com/posts', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: { 'Content-type': 'application/json; charset=UTF-8' }
-            });
-            console.log("✅ Данные синхронизированы");
-        } catch (e) { 
-            console.log("⚠️ Offline mode: данные сохранены локально"); 
+            const storageResponse = await fetch(API_URL);
+            if (storageResponse.ok) {
+                const storageData = await storageResponse.json();
+                console.log("📊 Данные в облачном хранилище:", storageData);
+        
+                if (storageData && storageData.length > 0) {
+                    let cloudOrders = (Array.isArray(storageData) ? storageData : [storageData]).map(item => ({
+                        id: item.item_amount,
+                        tour: (item.item_name.split(' | ')[0] || "Тур").replace("Тур: ", ""),
+                        user: (item.item_name.split(' | ')[1] || "Гость").replace("Юзер: ", ""),
+                        date: (item.item_name.split(' | ')[2] || "2026").replace("Дата: ", ""),
+                        time: "в архиве"
+                    }));
+                    
+                    let all = localOrders.concat(cloudOrders);
+                    let unique = all.filter((item, index) => 
+                        all.findIndex(t => t.id.toString().endsWith(item.id.toString()) || item.id.toString().endsWith(t.id.toString())) === index
+                    );
+                    
+                    localStorage.setItem('myBookings', JSON.stringify(unique));
+                }
+            }
+        } catch (error) {
+            console.error("❌ Ошибка получения данных:", error);
         }
     }
-
+    sync(); 
 
     // === 3. ВХОД / РЕГИСТРАЦИЯ ===
     var toggleLink = document.querySelector('.login-link');
