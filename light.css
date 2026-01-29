@@ -7,15 +7,10 @@ body {
 header {
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-header nav li a {
-    color: #293F65;
-    font-size: 16px;
-    align-items: center;
-    gap: 10px;  
-    font-family: inherit;
-    font-weight: 400;
-    text-decoration: none;
+    display: flex !important;
+    justify-content: flex-start !important; 
+    align-items: center !important;
+    gap: 30px;
 }
 
 
@@ -59,22 +54,46 @@ footer {
     header nav, 
     #menuToggle, 
     #navMenu {
-        display: none !important;
+        display: none;
     }
-    header .come_in {
+    
+    header a {
+        padding: 8px 12px;
+        font-size: 14px;
         display: block !important;
         margin-left: auto; 
     }
-    header .come_in button {
-        padding: 8px 12px;
-        font-size: 14px;
+    header nav#navMenu {
+        display: none !important;
     }
 }
 
 
 
 
+header nav#navMenu {
+    margin-left: auto; 
+    display: block; 
+}
 
+header nav ul {
+    display: flex;
+    gap: 25px; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #293F65;
+    font-size: 16px;
+    align-items: left;
+    gap: 20 px;  
+    font-family: inherit;
+    font-weight: 400;
+    text-decoration: none;
+}
 
+header nav ul li a {
+    text-decoration: none;
+    color: #293F65;
+}
 
 

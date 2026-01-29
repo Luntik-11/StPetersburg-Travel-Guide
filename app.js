@@ -86,16 +86,22 @@ document.addEventListener('DOMContentLoaded', function() {
     window.handleRegister = function() {
         var name = get('regName').value.trim();
         var pass = get('regPass').value.trim();
-
+    
         if (name && pass) {
             localStorage.setItem('userName', name);
-            sync({user: name, type: isLoginMode ? 'login' : 'reg'}, "AUTH");
-            alert(isLoginMode ? "С возвращением, " + name : "Регистрация успешна!");
+            if (!isLoginMode) {
+                 alert("Регистрация успешна!");
+                 window.location.href = 'index.html';
+                 return; 
+            }
+            sync({user: name, type: 'login'});
+            alert("С возвращением, " + name);
             window.location.href = 'index.html';
         } else {
             alert("Заполните Имя и Пароль!");
         }
     };
+    
 
     // === 4. БРОНИРОВАНИЕ ===
     if (isBookingPage && !savedUser) {

@@ -134,25 +134,22 @@ body {
     border-radius: 16px;
     transition: transform 0.3s ease;
 }
-/* --- ГЛАВНОЕ: Убираем кликабельность, но оставляем растягивание --- */
 .image-grid .ih-item a {
     display: block;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Ссылка не реагирует на нажатие */
-    cursor: default;      /* Убираем палец, оставляем обычную стрелку */
+    pointer-events: none; 
+    cursor: default;  
 }
 
 .image-grid .ih-item {
-    pointer-events: auto; /* Карточка ловит наведение для анимации */
+    pointer-events: auto; 
 }
 
-/* --- Оформление курсива для слова "вдохновляет" --- */
 .italic-word {
     font-style: italic !important;
 }
 
-/* Остальные ваши стили без изменений */
 .icon-list li:hover { transform: translateY(-5px); }
 
 .gallery {
@@ -182,12 +179,12 @@ body {
 .ih-item.square.effect-hover .img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Картинка растягивается на весь блок */
+    object-fit: cover; 
     transition: transform 0.5s ease;
 }
 
 .ih-item.square.effect-hover:hover .img img {
-    transform: scale(1.1); /* Зум при наведении */
+    transform: scale(1.1); 
 }
 
 .ih-item.square.effect-hover .info {
